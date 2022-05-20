@@ -1,0 +1,21 @@
+<%- include('../partials/header', { loggedIn }) %>
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: 80vh"
+>
+  <form method="post" action="/todo/create">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input type="text" class="form-control" name="title" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Detail</label>
+      <input type="text" class="form-control" name="detail" />
+    </div>
+    <% if (locals.error) { %>
+    <p class="text-danger"><%= error %></p>
+    <% } %>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>

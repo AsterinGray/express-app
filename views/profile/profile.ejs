@@ -1,0 +1,19 @@
+<%- include('../partials/header', { loggedIn }) %>
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: 80vh"
+>
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">FirstName LastName</h5>
+      <p class="card-text">Email</p>
+      <div class="d-flex">
+        <a href="/profile/edit" class="btn btn-primary">Edit Profile</a>
+        <form method="POST" action="/profile/delete">
+          <button type="submit" class="btn btn-danger">Delete Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %>

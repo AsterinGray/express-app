@@ -1,0 +1,50 @@
+<%- include('../partials/header', { loggedIn }) %>
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: 80vh"
+>
+  <form method="post" action="/profile/edit">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="firstName"
+      />
+      <div id="emailHelp" class="form-text">
+        Please input your first name here
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="lastName"
+      />
+      <div id="emailHelp" class="form-text">
+        Please input your last name here
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="email"
+      />
+      <div id="emailHelp" class="form-text">Please input your email here</div>
+    </div>
+    <% if (locals.error) { %>
+    <p class="text-danger"><%= error %></p>
+    <% } %>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>
