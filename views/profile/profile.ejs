@@ -5,8 +5,8 @@
 >
   <div class="card" style="width: 18rem">
     <div class="card-body">
-      <h5 class="card-title">FirstName LastName</h5>
-      <p class="card-text">Email</p>
+      <h5 class="card-title"><%= user.firstName %> <%= user.lastName %></h5>
+      <p class="card-text"><%= user.email %></p>
       <div class="d-flex">
         <a href="/profile/edit" class="btn btn-primary">Edit Profile</a>
         <form method="POST" action="/profile/delete">

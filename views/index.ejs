@@ -1,12 +1,30 @@
 <%- include('partials/header', { loggedIn }) %>
 <div class="jumbotron jumbotron-fluid mt-5">
-    <div class="container">
-        <h1 class="display-4">Welcome, <%= locals.nama || 'Guest' %></h1>
-        <p class="lead">
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
-        </p>
+  <div class="container">
+    <h1 class="display-4">Welcome, <%= locals.nama || 'Guest' %></h1>
+    <p class="lead">
+      This is a modified jumbotron that occupies the entire horizontal space of
+      its parent.
+    </p>
+  </div>
+  <% if(locals.nama) { %>
+  <div class="container">
+    <h1>Todo</h1>
+    <a href="/todo/create" class="btn btn-primary">Create Todo</a>
+
+    <% if(locals.user) { %> <% user.Todos.map((todo) => { %>
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title"><%= todo.title %></h5>
+        <p class="card-text"><%= todo.detail %></p>
+        <form method="post" action="/todo/delete/<%= todo.id %>">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
     </div>
+    <% }) %> <% } %>
+  </div>
+  <% } %>
 </div>
 <%- include('partials/footer') %>
 
